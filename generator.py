@@ -8,7 +8,7 @@ def generate_derived_parameters(rows):
         level = line[2].strip()
         if level == "2":
             mbox_name = handle_level_2(line)
-        if level == "3":
+        elif level == "3":
             derived_lines.extend(handle_level_3(line, mbox_name))
         elif level == "4":
             derived_lines.extend(handle_level_4(line, mbox_name))

@@ -1,29 +1,20 @@
-import streamlit as st
-from utils.parser import parse_icd_file
 from generator import generate_derived_parameters
+from utils.parser import ask_input_file, ask_output_file, process_icd_to_output
 
-st.set_page_config(page_title="ICD Derived Generator")
 
-st.title(" ICD Derived Parameter Generator")
-st.markdown("Uploadez votre fichier ICD au format `.csv`")
+def main():
+    input_file = ask_input_file()
+    if not input_file:
+        print("Aucun fichier sélectionné. Fin du programme.")
+        return
 
-uploaded_file = st.file_uploader(" Sélectionnez un fichier ICD (.csv)", type=["csv"])
+    output_file = ask_output_file()
+    if not output_file:
+        print("Aucun fichier de sortie sélectionné. Fin du programme.")
+        return
 
-if uploaded_file:
-    # Lire le contenu du fichier via votre fonction parser
-    rows = parse_icd_file(uploaded_file)
+    process_icd_to_output(input_file, output_file)
+    print("Terminé avec succès !")
 
-    # Générer les lignes dérivées
-    derived_lines = generate_derived_parameters(rows)
-
-    if derived_lines:
-        derived_text = "".join(derived_lines)
-        st.success("Paramètres dérivés générés avec succès.")
-        st.download_button(
-            label=" Télécharger le fichier dérivé généré",
-            data=derived_text,
-            file_name="derived_parameters.txt",
-            mime="text/plain"
-        )
-    else:
-        st.warning("Aucun paramètre dérivé n'a été généré.")
+if __name__ == "__main__":
+    main()
