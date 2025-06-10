@@ -1,6 +1,6 @@
 def generate_iads_line(param_name, type_str, bus, obj_text, gen_name, source, expr, unit="", suffix=""):
     """
-    Génère une ligne IADS (format tabulé) représentant un paramètre dérivé.
+    Génère une ligne IADS représentant un paramètre dérivé.
 
     Paramètres :
     - param_name : nom du paramètre (ex. : "TTP_12345")

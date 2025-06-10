@@ -17,7 +17,7 @@ def generate_disc_expr(das_studio_name, start_bit, size, condition):
     return expr
 
 
-def generate_bnr_expr(das_studio_name, start_bit, size, condition, signed=True, used_min=True):
+def generate_bnr_expr(das_studio_name, start_bit, size, condition, signed, used_min):
     """
     Génère une expression IADS pour un signal de type binaire numérique (BNR).
 

@@ -45,7 +45,7 @@ def handle_signal(line, mbox_name, has_mux_condition):
 
     # Génération des expressions IADS
     if data_type == "BNR":
-        expr = generate_bnr_expr(das_studio_name, start_bit, size, condition, signed=signed, used_min=min_val)
+        expr = generate_bnr_expr(das_studio_name, start_bit, size, condition, signed, min_val)
         output.append(generate_iads_line(param_name, "float", bus, obj_text, gen_name, "BitVector", expr))
         if resolution != "N/A":
             output.append(generate_eu_line(param_name, bus, obj_text, gen_name, unit, resolution))
