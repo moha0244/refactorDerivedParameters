@@ -18,7 +18,7 @@ if uploaded_file:
 
     if derived_lines:
         derived_text = "".join(derived_lines)
-        st.success(" Paramètres dérivés générés avec succès.")
+        st.success("Paramètres dérivés générés avec succès.")
         st.download_button(
             label=" Télécharger le fichier dérivé généré",
             data=derived_text,
@@ -26,4 +26,4 @@ if uploaded_file:
             mime="text/plain"
         )
     else:
-        st.warning("⚠ Aucun paramètre dérivé n'a été généré.")
+        st.warning("Aucun paramètre dérivé n'a été généré.")
