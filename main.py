@@ -1,6 +1,5 @@
 from utils.parser import ask_input_file, ask_output_file, process_icd_to_output
 
-
 def main():
     input_file = ask_input_file()
     if not input_file:
