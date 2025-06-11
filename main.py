@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.parser import parse_icd_file
-from generator import generate_derived_parameters
+from utils.generator import generate_derived_parameters
 
 st.set_page_config(page_title="ICD Derived Generator")
 
