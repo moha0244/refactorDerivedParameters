@@ -1,4 +1,3 @@
-from generator import generate_derived_parameters
 from utils.parser import ask_input_file, ask_output_file, process_icd_to_output
 
 

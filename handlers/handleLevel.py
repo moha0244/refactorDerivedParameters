@@ -11,7 +11,7 @@ def handle_signal(line, mbox_name, has_mux_condition):
     Paramètres :
     - line : ligne CSV contenant les métadonnées du signal
     - mbox_name : nom de la boîte de message associée (choisi dans le level 2)
-    - has_mux_condition : booléen, True si une condition de multiplexage s'applique (Level 4)
+    - has_mux_condition : booléen, True si une condition de multiplexage s'applique (C'est à dire, Level 4)
 
     Retour :
     - Liste de lignes IADS générées
@@ -57,12 +57,21 @@ def handle_signal(line, mbox_name, has_mux_condition):
 
 
 def handle_level_2(line):
+    """
+    Récupère simplement le nom de la boîte de message (niveau 2)
+    """
     return line[4].strip()
 
 
 def handle_level_3(line, mbox_name):
+    """
+    Traite un signal de niveau 3 (pas de multiplexage)
+    """
     return handle_signal(line, mbox_name, False)
 
 
 def handle_level_4(line, mbox_name):
+    """
+    Traite un signal de niveau 4 (avec multiplexage)
+    """
     return handle_signal(line, mbox_name, True)

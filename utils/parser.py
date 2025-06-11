@@ -1,7 +1,7 @@
 import csv
 import tkinter as tk
 from tkinter import filedialog
-from generator import generate_derived_parameters
+from utils.generator import generate_derived_parameters
 
 
 def ask_input_file():
