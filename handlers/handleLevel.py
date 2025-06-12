@@ -1,5 +1,6 @@
 from builder.namer import build_param_name, build_condition
-from builder.generation import generate_iads_line, generate_eu_line,generate_bnr_expr, generate_disc_expr
+from builder.iads_line_generator import generate_iads_line, generate_eu_line
+from builder.expression_builder import generate_bnr_expr, generate_disc_expr
 from utils.signals import is_valid_signal, get_conversion_signal
 
 
