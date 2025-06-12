@@ -7,7 +7,7 @@ pip install streamlit
 
 ***Lancement de l'application***:
 Une fois les dépendances installées, lancez l'application avec la commande suivante :
-streamlit run main.py
+ python -m streamlit run main.py
 
 Cela ouvrira automatiquement l'application dans votre navigateur, à l'adresse :
 http://localhost:8501
